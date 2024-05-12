@@ -5,6 +5,7 @@ vim.keymap.set(
 	"<Nop>",
 	{ noremap = true, silent = true }
 )
+vim.g.mapleader = " "
 
 -- nvim-spider
 vim.keymap.set(
@@ -26,53 +27,34 @@ vim.keymap.set(
 	{ desc = "Spider-b" }
 )
 
--- hop keys
--- set leader w <char> to HopWord char
+-- hop
 vim.keymap.set(
-	{ "n", "o", "x" },
-	"w",
-	":HopWord<CR>",
-	{ desc = "HopWord" }
+	{ "n", "v" },      -- 指定模式：n = 普通模式，v = 可视模式
+	"<leader>w",       -- <leader>w作为触发键
+	"<cmd>HopWord<CR>", -- 执行的命令：HopWord
+	{ noremap = true, silent = true, desc = "Hop to a word" }
 )
--- set leader s <char> to HopChar1 char
 vim.keymap.set(
-	{ "n", "o", "x" },
-	"s",
-	":HopChar1<CR>",
-	{ desc = "HopChar1" }
+	{ "n", "v" },
+	"<leader>l",
+	"<cmd>HopLine<CR>",
+	{ noremap = true, silent = true, desc = "Hop to a line" }
 )
--- set leader S <char> to HopChar2 char
 vim.keymap.set(
-	{ "n", "o", "x" },
-	"S",
-	":HopChar2<CR>",
-	{ desc = "HopChar2" }
+	{ "n", "v" },
+	"<leader>c",
+	"<cmd>HopChar1<CR>",
+	{ noremap = true, silent = true, desc = "Hop to a char" }
 )
--- set leader l <char> to HopLine char
 vim.keymap.set(
-	{ "n", "o", "x" },
-	"l",
-	":HopLine<CR>",
-	{ desc = "HopLine" }
+	{ "n", "v" },
+	"<leader>C",
+	"<cmd>HopChar2<CR>",
+	{ noremap = true, silent = true, desc = "Hop to a char" }
 )
--- set leader p <char> to HopPattern char
 vim.keymap.set(
-	{ "n", "o", "x" },
-	"p",
-	":HopPattern<CR>",
-	{ desc = "HopPattern" }
-)
--- set leader L <char> to HopLineStart char
-vim.keymap.set(
-	{ "n", "o", "x" },
-	"L",
-	":HopLineStart<CR>",
-	{ desc = "HopLineStart" }
-) 
--- set leader v <char> to HopVertical char
-vim.keymap.set(
-	{ "n", "o", "x" },
-	"v",
-	":HopVertical<CR>",
-	{ desc = "HopVertical" }
+	{ "n", "v" },
+	"<leader>p",
+	"<cmd>HopPattern<CR>",
+	{ noremap = true, silent = true, desc = "Hop to a pattern" }
 )
